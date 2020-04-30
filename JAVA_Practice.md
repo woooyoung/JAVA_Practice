@@ -397,3 +397,129 @@ public class SwitchTest {
 }
 ```
 
+### ForTest
+```java
+
+public class ForTest {
+	public static void main(String[] args) {
+
+//		반복 횟수가 몇 번인지 알 경우 for를 사용한다.
+//		for가 실행되는 원리
+//		1. 변수에 저장된 값으로 조건식을 실행해서 참이면 반복을 시작한다. 거짓이면 반복문을 실행하지 않는다.
+//		2. {}블록을 한 번 실행한 후 변수 값을 증감치 만큼 변경시키고 조건식을 실행해서 ㅏㅁ이면 {}블록을 반복하고 거짓이면 {}블록을 탈출한다.
+//		for(자료형 변수명=초기치 ; 조건식; 증감치) {
+//			조건식이 참인 경우 실행할 문장;
+//			...;		
+//			}
+		
+//		변수를 선언만 하면 변수에 어떤 내용이 저장되어 있는지 모르기 때문에 반드시 사용하기 전에 초기화를 시켜야 한다.
+		int sum = 0;
+		for(int i=1; i<100; i++) {
+//			대입 연산자 : +=, -=, *=, /=, %=
+//			sum에 저장된 값에 i에 저장된 값을 더해서 sum에 저장시켜라
+			sum += i;         // sum = sum + i 와 같은 기능이 실행된다.
+		}
+		System.out.println("1~100의 합계 :" + sum);
+		
+//		증감 연산자(++ :1증가, -- : 1감소)
+//		++a : 변수 a 에 저장된 값을 1 증가 시키고 사용한다.
+//		a++ : 변수 a 에 저장된 값을 사용하고 1 증가 시킨다. 현재 문장을 실행하고 ";"을 만나서 문장이 종료되는 순간 실행된다.
+//		--a : 변수 a 에 저장된 값을 1 감 시키고 사용한다.
+//		a-- : 변수 a 에 저장된 값을 사용하고 1 감소 시킨다. 현재 문장을 실행하고 ";"을 만나서 문장이 종료되는 순간 실행된다.
+		
+		int a = 1, b, c;
+		b= a++;
+		c= ++a;
+		System.out.println("a =" + a + ",b =" + b + ",c =" + c);
+		
+//		() 안의 수식==> 산술 연산자(*, /, %) ==> 산술 연산자(+, -) ==> 관계 연산자 ==> 논리 연산자 ==> 대입 연산자
+//		단항 연산자 ==> 이항 연산자 ==> 삼항 연산자
+		
+		int d =1, e;
+		e = ++d + ++d + ++d + ++d;
+		System.out.println("d = "+ d +",e = "+ e);
+	}
+}
+```
+
+### WhileTest01
+```java
+
+public class WhileTest01 {
+	public static void main(String[] args) {
+
+//		while의 최초 진입 조건이 거짓이면 {} 블록을 한 번도 실행하지 않는다.
+//		while(조건식) {
+//			조건이 참인 동안 실행할 문장;
+//			...;
+//		}
+
+		int sum = 0, i = 0;
+		while (i < 100) {
+			sum += i;
+		}
+		System.out.println("1~100의 합계 : " + sum);
+
+//		while의 최초 진입 조건이 거짓이더라고 {} 블록을 한 번은 실행한다.
+//		do {
+//			조건이 참인 동안 실행할 문장;
+//			...;
+//		} while(조건식);      //";"가 빠지면 안된다.
+
+		sum = i = 0; // 변수를 선언 할 떄는 사용할 수 없다.
+
+		do {
+			sum += ++i;
+		} while (i > 100);
+		System.out.println("1~100의 합계 : " + sum);
+	}
+
+}
+```
+
+### WhileTest02
+```java
+import java.util.Scanner;
+
+public class WhileTest02 {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int menu = 0;
+
+//		while(true){
+		while (menu != 5) {
+			do {
+				System.out.println("=============================");
+				System.out.println("1.저장 2.보기 3.수정 4.삭제 5.종료");
+				System.out.println("=============================");
+				System.out.println("원하는 메뉴를 선택하세요 : ");
+				menu = sc.nextInt();
+			} while (menu < 1 || menu > 5);
+
+//		여기에 왔다는 것은 메뉴가 1~5 사이의 숫자가 입력 되었다는 것이다.
+			switch (menu) {
+			case 1:
+				System.out.println("입력");
+				break;
+			case 2:
+				System.out.println("보기");
+				break;
+			case 3:
+				System.out.println("수정");
+				break;
+			case 4:
+				System.out.println("삭제");
+				break;
+//		case 5: System.out.println("ByeBye"); 
+//		System.exit(0);       		// 프로그램을 강제로 종료한다.
+//		break;
+			}
+
+		}
+		System.out.println("ByeBye");
+		sc.close();
+	}
+}
+```
