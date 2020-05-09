@@ -846,8 +846,9 @@ public class BaseballGame {
 			}
 			System.out.println(s + "스트라이크" + (b - s) + "볼");
 		}
-		long end = System.currentTimeMillis(); //게임 종료 시간
-		System.out.println((end-start)/1000+"초 걸려서 "+count+"번 만에 맞췄다.");
+		long end = System.currentTimeMillis(); // 게임 종료 시간
+		System.out.println((end - start) / 1000 + "초 걸려서 " + count + "번 만에 맞췄다.");
+		sc.close();
 	}
 }
 ```
