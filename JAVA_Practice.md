@@ -852,3 +852,58 @@ public class BaseballGame {
 	}
 }
 ```
+
+### ForWhile
+```java
+public class ForWhile {
+	public static void main(String[] args) {
+
+//		int i = 0;
+//		for (; i < 10; i++) {
+//			System.out.println(i);
+//
+//		}
+//		for (int j = 0;; j++) {
+//
+//			if (j == 4) {
+//				continue;
+//			}
+//			System.out.println(j);
+//			if (j == 10) {
+//				break;
+//			}
+//		}
+		int k = 0;
+		while (k <= 10) {
+			System.out.println(k++);
+			if (k == 6) {
+				break;
+			}
+
+		}
+		System.out.println("hi");
+
+	}
+}
+```
+
+### 4칙연산
+```java
+import java.util.Scanner;
+
+public class _4칙연산 {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+
+		System.out.println(a + b);
+		System.out.println(a - b);
+		System.out.println(a * b);
+		System.out.println(Math.floorDiv(a, b));
+		sc.close();
+	}
+}
+```
